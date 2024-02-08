@@ -1,2 +1,2 @@
-# PPA-PC-part-Analyzer-
+# PPA (PC part Analyzer)
 A basic computer hardware and software analyzer.
