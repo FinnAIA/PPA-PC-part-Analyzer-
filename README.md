@@ -2,7 +2,7 @@
 A basic computer hardware and software analyzer.
 
 ## For windows(embedded):
-1. download all files, use the installer, then run the .py file and everythng should work
+1. download all files, open the pip_installer file and let it run, then run the .py file and everythng should work
 
 ## For windows(portable):
 1. Simply run the PPA_portable.exe file
