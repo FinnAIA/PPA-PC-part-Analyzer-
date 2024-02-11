@@ -1,9 +1,6 @@
 import psutil
-import subprocess
 import socket
-import tkinter as tk
-from tkinter import messagebox
-from tkinter import *
+import getpass
 
 def get_cpu_info():
     # CPU information
@@ -63,6 +60,13 @@ def get_network_info():
     except Exception as e:
         return f"Error: {e}"
 
+def get_user_information():
+    try:
+        username = getpass.getuser()
+        return f"User Information:\nActive Username: {username}\n"
+    except Exception as e:
+        return f"Error: {e}"
+
 def convert_bytes(byte_size):
     for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
         if byte_size < 1024.0:
@@ -71,8 +75,13 @@ def convert_bytes(byte_size):
     return f"{byte_size:.1f} {unit}"
 
 if __name__ == "__main__":
-    CPU_info = get_cpu_info()
-    MEM_info = get_memory_info()
-    DSK_info = get_disk_info()
-    NET_info = get_network_info()
-    print(f"{CPU_info}\n{MEM_info}\n{DSK_info}\n{NET_info}")
+    while True:
+        CPU_info = get_cpu_info()
+        MEM_info = get_memory_info()
+        DSK_info = get_disk_info()
+        NET_info = get_network_info()
+        USR_info = get_user_information()
+        print(f"{USR_info}\n{CPU_info}\n{MEM_info}\n{DSK_info}\n{NET_info}")
+        user_input = input("\nDo you want to exit the program (y/n)? ")
+        if user_input.lower() == "y":
+            break
